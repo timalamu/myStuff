@@ -1,0 +1,47 @@
+﻿@model EricTim.Models.CustomerBooking
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CustomerBooking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bookings)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customers)
+        </dd>
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Booking Code</th>
+                    <th>Account Number</th>
+                   
+                </tr>
+                @foreach (var item in Model.Bookings)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BookingID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AccountID)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TableID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

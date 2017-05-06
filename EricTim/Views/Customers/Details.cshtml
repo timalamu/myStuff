@@ -1,0 +1,107 @@
+﻿@model EricTim.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstMidName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstMidName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfPassengers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfPassengers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FrequentDestination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FrequentDestination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationZone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DestinationZone)
+        </dd>
+        <<dt>
+    @Html.DisplayNameFor(model => model.Bookings)
+</dt>
+<dd>
+    <table class="table">
+        <tr>
+            <th>Booking Code</th>
+            <th>Passenger Name</th>
+            
+        </tr>
+        @foreach (var item in Model.Bookings)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookingID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PassengerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartureDate)
+                </td>
+            </tr>
+        }
+    </table>
+</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AccountID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
