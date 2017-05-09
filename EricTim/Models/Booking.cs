@@ -14,6 +14,7 @@ namespace EricTim.Models
         [Display(Name = "Booking Code")]
         public int BookingID { get; set; }
 
+        [Required]
         [Display(Name = "Account No.")]
         public int AccountID { get; set; }
 
@@ -21,29 +22,26 @@ namespace EricTim.Models
         [Display(Name = "Date of Booking")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-      //  [CurrentDate]
-        public DateTime DateOfBooking { get; set; }
+        //  [CurrentDate]
+        public DateTime DateOfBooking = DateTime.Today;
 
         [Required]
         [Display(Name = "Full Name")]
         [StringLength(60, ErrorMessage = "Name cannot be longer than 60 characters.")]
-        //[RegularExpression(@"^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-za-z]+))$", ErrorMessage = "Enter valid character for name")]
+        [RegularExpression(@"^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-za-z]+))$", ErrorMessage = "Enter valid character for name")]
         public string PassengerName { get; set; }
 
         [Required]
         [Display(Name = "Date of Departure")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        //[DateRange("2017-05-05")]
         public DateTime DepartureDate { get; set; }
 
-        [Required]
         [Display(Name = "Return Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-       // [DateRange("2017-05-05")]
         public DateTime ReturnDate { get; set; }
-
+            
         [Required]
         [Display(Name = "Number of Passenger(s)")]
         [Range(1, 10)]

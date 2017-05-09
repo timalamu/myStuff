@@ -6,7 +6,7 @@ using System.Web;
 
 namespace EricTim.Models
 {
-    public enum DestinationZone { Asia, NorthAmerica, Europe, SouthAmerica, Oceania, Africa }
+    public enum DestinationZone { Select, Asia, NorthAmerica, Europe, SouthAmerica, Oceania, Africa }
 
     public class Customer
     {
@@ -18,16 +18,17 @@ namespace EricTim.Models
         [Required]
         [Display(Name = "First Name")]
         [StringLength(30, ErrorMessage = "First name cannot be longer than 30 characters.")]
-        [RegularExpression(@"^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-za-z]+))$", ErrorMessage ="Enter valid character for name")]
+        [RegularExpression(@"^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-za-z]+))$", ErrorMessage ="Enter valid character for First and Mid names")]
         public string FirstMidName { get; set; }
 
         [Required]
         [Display(Name = "Last Name")]
         [StringLength(30, ErrorMessage = "First name cannot be longer than 30 characters.")]
-        [RegularExpression(@"^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-za-z]+))$", ErrorMessage = "Enter valid character for name")]
+        [RegularExpression(@"^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-za-z]+))$", ErrorMessage = "Enter valid character for Last name")]
         public string LastName { get; set; }
 
         [Required]
+        [Display(Name = "Address")]
         public string Address { get; set; }
 
         [Required]
@@ -41,8 +42,7 @@ namespace EricTim.Models
         public string PhoneNo { get; set; }
 
         [Required]
-        [Display(Name = "Number of Passenger(s)")]
-        [Range(1, 10)]
+        [Display(Name = "Number of Traveller(s)")]
         public int NumberOfPassengers { get; set; }
 
         [Display(Name = "Frequent Destination")]
@@ -51,7 +51,7 @@ namespace EricTim.Models
         [Display(Name = "Destination Zone")]
         public DestinationZone DestinationZone { get; set; }
 
-        public ICollection<Booking> Bookings { get; set; }
+        public virtual ICollection<Booking> Bookings { get; set; }
 
     }
 }

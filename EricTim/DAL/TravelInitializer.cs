@@ -24,11 +24,11 @@ namespace EricTim.DAL
             context.SaveChanges();
             var bookings = new List<Booking>
             {
-             new Booking { BookingID = 011, AccountID = 1, DateOfBooking = DateTime.FromOADate(1900 - 10 - 25), PassengerName = "Tim Alamu", DepartureDate=DateTime.FromOADate(1900 - 10 - 25), ReturnDate = DateTime.FromOADate(1900 - 10 - 25), NumberOfPassengers = 2, PointOfOrigin="Dublin", Destination = "Chicago", FlightDuration = 2,  },
-             new Booking { BookingID = 003, AccountID = 1, DateOfBooking = DateTime.FromOADate(1900 - 10 - 25), PassengerName = "Alamu", DepartureDate = DateTime.FromOADate(1900 - 10 - 25), ReturnDate = DateTime.FromOADate(1900 - 10 - 25), NumberOfPassengers = 2, PointOfOrigin = "Dublin", Destination = "London", FlightDuration = 2 },
-             new Booking { BookingID = 004, AccountID = 1, DateOfBooking = DateTime.FromOADate(1900 - 11 - 25), PassengerName = "Lee Harvey", DepartureDate = DateTime.FromOADate(2017 - 10 - 25), ReturnDate = DateTime.FromOADate(1900 - 11 - 25), NumberOfPassengers = 2, PointOfOrigin = "London", Destination = "Bilbao", FlightDuration = 2  },
-             new Booking { BookingID = 006, AccountID = 1, DateOfBooking = DateTime.FromOADate(1900 - 10 - 25), PassengerName = "Alamu", DepartureDate = DateTime.FromOADate(1900 - 10 - 25), ReturnDate = DateTime.FromOADate(1900 - 10 - 25), NumberOfPassengers = 2, PointOfOrigin = "Dublin", Destination = "London", FlightDuration = 2 },
-             new Booking { BookingID = 005, AccountID = 1, DateOfBooking = DateTime.FromOADate(2000 - 11 - 25), PassengerName = "Lee Harvey", DepartureDate = DateTime.FromOADate(20-10-2015), ReturnDate = DateTime.FromOADate(1900 - 11 - 25), NumberOfPassengers = 2, PointOfOrigin = "London", Destination = "Bilbao", FlightDuration = 2  }
+             new Booking { BookingID = 011, AccountID = 1, PassengerName = "Tim Alamu", DepartureDate=DateTime.FromOADate(1900 - 10 - 25), NumberOfPassengers = 2, PointOfOrigin="Dublin", Destination = "Chicago", FlightDuration = 2,  },
+             new Booking { BookingID = 003, AccountID = 1, PassengerName = "Alamu", DepartureDate = DateTime.FromOADate(1900 - 10 - 25), NumberOfPassengers = 2, PointOfOrigin = "Dublin", Destination = "London", FlightDuration = 2 },
+             new Booking { BookingID = 004, AccountID = 1, PassengerName = "Lee Harvey", DepartureDate = DateTime.FromOADate(2017 - 10 - 25), NumberOfPassengers = 2, PointOfOrigin = "London", Destination = "Bilbao", FlightDuration = 2  },
+             new Booking { BookingID = 006, AccountID = 1, PassengerName = "Alamu", DepartureDate = DateTime.FromOADate(1900 - 10 - 25), NumberOfPassengers = 2, PointOfOrigin = "Dublin", Destination = "London", FlightDuration = 2 },
+             new Booking { BookingID = 005, AccountID = 1, PassengerName = "Lee Harvey", DepartureDate = DateTime.FromOADate(20-10-2015), NumberOfPassengers = 2, PointOfOrigin = "London", Destination = "Bilbao", FlightDuration = 2  }
 
             };
             bookings.ForEach(b => context.Bookings.Add(b));

@@ -12,6 +12,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.AccountID)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.FirstMidName)
         </th>
         <th>
@@ -40,6 +43,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountID)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.FirstMidName)
         </td>
